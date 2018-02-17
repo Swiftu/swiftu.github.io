@@ -1,43 +1,79 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="https://fonts.googleapis.com/css?family=Karla:700&amp;subset=latin-ext" rel="stylesheet">
-	<title></title>
+	<meta http-equiv="content-language" content="ru">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<meta name="author" content="Роман Гринберг @voluroman">
+	<title>LSCITY.RU - Coming Soon</title>
 	<style>
-		html {
-			background-color: #E94822;
-			position: relative;
+		body {
+			background-color: #f9f9f9;
 		}
-		#logo {
-			font-family: 'Karla', sans-serif;
-			color: white;
-			padding: 35px;
-		}
-		#block {
-			background-color: white;
-			width: 225px;
-			height: 85px;
-			/* margin-top: 17%;
-			margin-left: 40%; */
-			font-family: 'Karla', sans-serif;
-			font-size: 27.5px;
-			line-height: 85px;
+		.text {
 			text-align: center;
-			color: #E94822;
-			position: relative;
-			top: 50%; 
-			left: 50%; 
-			transform: translate(-50%, -155%);
+			margin: 20% auto;
+			color: #222;
+			font: 24px "Bitstream Vera Sans Mono", "Anonymous Pro", "Consolas", monospace;
+    		text-shadow: 0 1px 1px rgba(0,0,0,.25);
+    		letter-spacing: -0.01em;
 		}
-		#block span {
-			color: #2C2D34;
+		a {
+			text-decoration: none;
+			color: #222;
+		}
+		.tips a {
+			font-weight: bold;
+			border-bottom: 1px dotted #ccc;
+			background: #2d2e30;
+			color: #fff;
+		}
+		.tips {
+			text-align: center;
+			font: 15px "Bitstream Vera Sans Mono", "Anonymous Pro", "Consolas", monospace;
+		}
+		.tooltip {
+			position: relative;
+		}
+		.tooltip:before,
+		.tooltip:after {
+			display: block;
+			position: absolute;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity .5s; 
+			left: 0%;
+		}
+		.tooltip:before {
+			content: attr(data-title);
+			color: #f8f8f8;
+			padding: 5px;
+			width: 200px;
+			background-color: rgba(0,0,0,.85);
+			bottom: 30px;
+			margin-left: -35px;
+			box-sizing: border-box;
+			text-align: center;
+			font-size: .8em;
+			border-radius: 5px;
+		}
+		.tooltip:after {
+			content: "";
+			border-top: 10px solid rgba(0,0,0,.85);
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			bottom: 20px;
+			margin-left: 50px;
+		}
+		.tooltip:hover:before,
+		.tooltip:hover:after{
+			visibility: visible;
+			opacity: 1;
 		}
 	</style>
-	<script>
-	</script>
 </head>
-<body id="logo">
-	<p>.logo</p>
-	<div id="block">&lt;<span>Szymanski</span>&#47;&gt;</div>
+<body>
+	<div class="text">FROZEN<br><a href="https://vk.com/lscity">VK.COM/LSCITY</a></div>
+	<div class="tips">По всем вопросам и предложениям обращаться к <span class="tooltip" data-title="Основатель коллектива LSCITY.RU"><a href="https://vk.com/voluroman">Роману Гринбергу</a></span></div>
 </body>
 </html>
