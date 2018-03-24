@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="content-language" content="ru">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<meta name="author" content="Роман Гринберг @voluroman">
+	<title></title>
+	<script src="script.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0
+		}
+
+		html {
+			background-color: #f1f1f1;
+			font-family: monospace, sans-serif;
+		}
+
+		body {
+			margin: 5%;
+		}
+
+		textarea {
+			border-radius: 5px;
+			border: 0px;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+			width: 550px;
+			height: 150px;
+			resize: none;
+			outline: none;
+			padding: 10px;
+		}
+
+		button {
+			width: 150px;
+			height: 25px;
+			border: 0px;
+			border-radius: 5px;
+			background-color: #d2d2d2;
+			outline: none;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+			color: grey;
+		}
+
+		p {
+			float: left;
+			padding-top: 3px;
+		}
+
+		.method {
+			display: table;
+			margin: auto;
+
+		}
+
+		select {
+			box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
+			background: white url(select-triangles.svg) no-repeat right 7px center;
+			border-radius: 3px;
+			line-height: 1.3;
+			position: relative;
+			-webkit-appearance: none;
+			width: 220px;
+			height: 28px;
+			outline: none;
+		}
+		
+
+		::-webkit-scrollbar {
+			width: 12px;
+		}
+
+		::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+			border-radius: 0px;
+		}
+
+		::-webkit-scrollbar-thumb {
+			border-radius: 5px;
+			-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.6);
+		}
+
+	</style>
+</head>
+
+<body align="center">
+		<form name="bintext">
+            <div>
+                <textarea name="source"></textarea>
+                <div>
+                    <div><br>
+                         <button type="button" name="text2bin">TEXT -&gt; BIN</button>
+                    </div>
+                </div>
+            </div>
+        <div><br>
+            <textarea name="result"></textarea>
+            <div>
+                <div><br>
+            <button type="button" name="bin2text">BIN -&gt; TEXT</button>
+            </div>
+            </div>
+         </div>
+        
+        
+            
+                
+                
+            
+        
+        
+    </form>
+		<script>
+        var source   = document.bintext.source,
+                result   = document.bintext.result,
+                t2b      = document.bintext.text2bin,
+                b2t      = document.bintext.bin2text;
+
+        rep_filled = document.bintext.rep_filled;
+                t2b.onclick = function() {
+            var bin = text2bin(source.value);
+
+            if (false) {
+                bin = bin.replace(/0/ig, " ");
+                result.value = bin.replace(/1/ig, "█");
+            } else {
+                result.value = bin;
+            }
+            $('#link_result').empty();
+            var link = 'https://dev20.ru/bin-text?b='+bin;
+            $('#link_result').append('<a href="'+link+'">'+link+'</a>');
+        }
+
+        b2t.onclick = function() {
+            if (false) {
+                var bin = result.value.replace(/ /ig, "0");
+
+                source.value = bin2text(bin.replace(/█/ig, "1"));
+
+            } else {
+                RegEx=/\s/g;
+                var bin = result.value.replace(RegEx,"");
+                source.value = bin2text(bin);
+            }
+        }
+    </script>
+</body>
+
+</html>
