@@ -1,0 +1,105 @@
+@font-face {
+	font-family: GothamProBold;
+	src: url("../fonts/GothamProBold.otf");
+}
+body {
+	background-color: #edeef0;
+	color: black;
+	margin: 0;
+	padding: 0;
+	direction: ltr;
+	font-size: 13px;
+	font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue, sans-serif;
+	line-height: 1.154;
+	font-weight: 400;
+	
+	display: block;
+}
+.away_wrap {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 780px;
+	margin: 50px auto;
+	line-height: 160%;
+}
+.page_block {
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 0 1px 0 0 #d7d8db;
+}
+.away_head {
+	height: 54px;
+	background-color: #c64332;
+	border-radius: 2px 2px 0 0;
+}
+.away_logo {
+	margin: 16px 0 0 25px;
+	
+	font-size: 21px;
+	font-family: GothamProBold;
+	color: #fff;
+	position: absolute;
+	line-height: 22px;
+}
+a {
+	color: #2a5885;
+	text-decoration: none;
+	cursor: pointer;
+}
+.away_content.bad_browser {
+	text-align: center;
+	padding: 20px 20px 20px;
+}
+.away_content {
+	padding: 20px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.away_content.bad_browser h2 {
+	margin-top: 15px;
+}
+.away_content h2 {
+	font-weight: 700;
+	margin: 19px 0 7px;
+}
+h2, h3 {
+	margin: 20px 0 15px;
+}
+h2 {
+	font-size: 16px;
+	color: #000;
+}
+.good_browsers {
+	padding: 20px 0 0;
+}
+.good_browser {
+	display: inline-block;
+	padding: 20px 20px 15px;
+	margin: 0 10px;
+	border-radius: 2px;
+	font-weight: 600;
+	font-size: 14px;
+}
+.good_browser:hover{
+	background-color:#f0f2f2;
+	text-decoration:none
+}
+.browser_icon {
+	height: 80px;
+	width: 80px;
+	background: url(../images/browsers.png) no-repeat 0 0;
+	margin-bottom: 10px;
+}
+.browser_icon.chrome {
+	background-position: 0 -165px;
+}
+.browser_icon.yandex {
+	background-position: 0 -334px;
+}
+.browser_icon.opera {
+	background-position: 0 -249px;
+}
+.browser_icon.firefox {
+	background-position: 0 -83px;
+}
